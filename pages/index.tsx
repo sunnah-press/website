@@ -1,8 +1,6 @@
 import Homepage from "../components/containers/Homepage";
 import Layout from "../components/layouts/Layout";
 import Main from "../components/layouts/Main";
-const axios = require("axios");
-const config = require("../config/database");
 // import styles from '../styles/Home.module.css'
 
 export default function Home() {

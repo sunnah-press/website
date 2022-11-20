@@ -1,14 +1,15 @@
-const config = (data) => {
-  return {
-    method: "post",
-    url: "https://data.mongodb-api.com/app/data-lpafy/endpoint/data/v1/action/find",
-    headers: {
-      "Content-Type": "application/json",
-      "Access-Control-Request-Headers": "*",
-      "api-key": process.env.DB_APIKEY,
-    },
-    data: data,
-  };
-};
+const { MongoClient } = require("mongodb");
 
-module.exports = config;
+require("dotenv").config();
+
+const uri = process.env.MONGODB_URI;
+
+const client = new MongoClient(uri, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
+const database = client.db("hadits");
+const collectionBukhari = database.collection("bukhari");
+
+module.exports = { collectionBukhari, client };

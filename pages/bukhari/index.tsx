@@ -1,11 +1,18 @@
 import AllHadits from "../../components/containers/AllHadits";
 import Layout from "../../components/layouts/Layout";
 import Main from "../../components/layouts/Main";
+const Bukhari = require("../../models/Bukhari");
 
-const axios = require("axios");
-const config = require("../../config/database");
+// const axios = require("axios");
+// const config = require("../../config/database");
 
-export default function index({ data }) {
+interface gasProps {
+  data: string;
+  agg: Function;
+}
+export default function index(props: gasProps) {
+  const { data } = props;
+
   return (
     <Layout>
       <Main container={<AllHadits data={data} />} margin="mb-10" />
@@ -14,22 +21,40 @@ export default function index({ data }) {
 }
 
 export async function getStaticProps() {
-  const query = {
-    collection: "bukhari",
-    database: "hadits",
-    dataSource: "Cluster0",
-    filter: { id: { $gt: 0 } },
-    limit: 5,
-  };
+  // const agg = [
+  //   {
+  //     $search: {
+  //       index: "bukhariIndex",
+  //       text: {
+  //         query: "Permulaan Wahyu",
+  //         path: {
+  //           wildcard: "*",
+  //         },
+  //       },
+  //     },
+  //   },
+  //   {
+  //     $limit: 5,
+  //   },
+  // ];
+  // console.log("tes1");
+  // const agg = [
+  //   {
+  //     $search: {
+  //       index: "bukhariIndex",
+  //       autocomplete: {
+  //         query: "",
+  //         path: "terjemah",
+  //       },
+  //     },
+  //   },
+  //   { $limit: 5 },
+  //   { $project: { _id: 0, terjemah: 1 } },
+  // ];
+  // const agg =
 
-  const data = await axios(config(query))
-    .then((res) => {
-      return res.data;
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-
+  const sunnah = await Bukhari.getAllBukhari();
+  const data = JSON.stringify(sunnah);
   return {
     props: { data }, // will be passed to the page component as props
   };
