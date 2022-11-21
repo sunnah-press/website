@@ -10,18 +10,3 @@ export default function Home() {
     </Layout>
   );
 }
-
-// export async function getServerSideProps() {
-
-//   const data = await axios(config)
-//     .then((res) => {
-//       return res.data;
-//     })
-//     .catch(function (error) {
-//       console.log(error);
-//     });
-
-//   return {
-//     props: { data }, // will be passed to the page component as props
-//   };
-// }

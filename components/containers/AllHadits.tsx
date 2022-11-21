@@ -6,22 +6,24 @@ import ListPage from "../layouts/ListPage";
 import axios from "axios";
 
 export default function AllHadits(props) {
-  const gas = JSON.parse(props.data);
-  const [hadits, setHadits] = useState(gas);
-  const [searchResults, setSearchResults] = useState(hadits);
-  const [value, setValue] = useState("malam");
+  // const gas = JSON.parse(props.data);
+  // const [hadits, setHadits] = useState(gas);
+  const [searchResults, setSearchResults] = useState([]);
+  const [value, setValue] = useState("");
 
   useEffect(() => {
     const fetchHadits = async () => {
       const res = await axios.get(
-        `http://localhost:3000/api/bukhari?search=${value}`
+        `http://localhost:3000/api/bukhari${
+          value === "" ? "" : "?search=" + value
+        }`
       );
       setSearchResults(res.data);
     };
     fetchHadits();
   }, [value]);
 
-  if (!searchResults) return setSearchResults(hadits);
+  // if (!searchResults) return setSearchResults([]);
 
   console.log(searchResults);
 
@@ -31,16 +33,11 @@ export default function AllHadits(props) {
         <h2 className="text-3xl font-extrabold bg-gradient-to-tr from-blue-700 to-cyan-500 bg-clip-text text-transparent p-3">
           Semua Hadits di Shahih Al-Bukhari
         </h2>
-        <SearchBar
-          hadits={hadits}
-          setSearchResults={setSearchResults}
-          setValue={setValue}
-        />
+        <SearchBar setSearchResults={setSearchResults} setValue={setValue} />
       </div>
 
       <ListPage
         searchResults={searchResults}
-        hadits={hadits}
         setSearchResults={setSearchResults}
       />
 
