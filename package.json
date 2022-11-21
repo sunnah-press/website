@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "devturbo": "npx turbo dev",
+    "turbo": "npx turbo build lint",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -27,6 +29,7 @@
     "autoprefixer": "^10.4.13",
     "eslint-config-next": "13.0.4",
     "postcss": "^8.4.19",
-    "tailwindcss": "^3.2.4"
+    "tailwindcss": "^3.2.4",
+    "turbo": "^1.6.3"
   }
 }

@@ -3,9 +3,6 @@ import Layout from "../../components/layouts/Layout";
 import Main from "../../components/layouts/Main";
 const Bukhari = require("../../models/Bukhari");
 
-// const axios = require("axios");
-// const config = require("../../config/database");
-
 interface gasProps {
   data: string;
   agg: Function;
@@ -20,23 +17,31 @@ export default function index(props: gasProps) {
   );
 }
 
-export async function getStaticProps() {
-  // const agg = [
-  //   {
-  //     $search: {
-  //       index: "bukhariIndex",
-  //       text: {
-  //         query: "Permulaan Wahyu",
-  //         path: {
-  //           wildcard: "*",
-  //         },
-  //       },
-  //     },
-  //   },
-  //   {
-  //     $limit: 5,
-  //   },
-  // ];
+type Data = {
+  name: string;
+};
+
+export async function getStaticProps(
+  req: NextApiRequest,
+  res: NextApiResponse<Data>
+) {
+  // console.log(req.query.search);
+  const agg = [
+    {
+      $search: {
+        index: "bukhariIndex",
+        text: {
+          query: "Permulaan Wahyu",
+          path: {
+            wildcard: "*",
+          },
+        },
+      },
+    },
+    {
+      $limit: 5,
+    },
+  ];
   // console.log("tes1");
   // const agg = [
   //   {
@@ -53,7 +58,7 @@ export async function getStaticProps() {
   // ];
   // const agg =
 
-  const sunnah = await Bukhari.getAllBukhari();
+  const sunnah = await Bukhari.getAllBukhari(agg);
   const data = JSON.stringify(sunnah);
   return {
     props: { data }, // will be passed to the page component as props

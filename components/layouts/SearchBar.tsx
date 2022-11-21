@@ -1,30 +1,12 @@
 // import Fuse from "fuse.js";
 
-export default function SearchBar({ hadits, setSearchResults }) {
+export default function SearchBar({ hadits, setSearchResults, setValue }) {
+  const sunnah = hadits.data;
+
   const handleSubmit = (e) => e.preventDefault();
-  const handleSearchChange = async (e) => {
-    if (!e.target.value) return setSearchResults(hadits);
-
-    const resultsArray = hadits.filter(
-      (dits) =>
-        dits.koleksi.includes(e.target.value) ||
-        dits.terjemah.includes(e.target.value)
-    );
-
-    // // Dynamically load fuse.js
-    // const Fuse = (await import("fuse.js")).default;
-    // const options = {
-    //   includeScore: true,
-    //   // Search in `koleksi` and in `terjemah` array
-    //   keys: [{ name: "terjemah" }],
-    // };
-
-    // const fuse = new Fuse(resultsArray, options);
-
-    // const gas = fuse.search(e.target.value);
-    // console.log(options.keys);
-    // console.log(gas);
-    setSearchResults(resultsArray);
+  const handleSearchChange = (e) => {
+    if (!e.target.value) return setSearchResults(sunnah);
+    setValue(e.target.value);
   };
   return (
     <form className="flex justify-center mt-10" onSubmit={handleSubmit}>

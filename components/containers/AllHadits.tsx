@@ -3,54 +3,27 @@ import Card from "../layouts/Card";
 import SearchBar from "../layouts/SearchBar";
 import useSWR from "swr";
 import ListPage from "../layouts/ListPage";
+import axios from "axios";
 
 export default function AllHadits(props) {
   const gas = JSON.parse(props.data);
   const [hadits, setHadits] = useState(gas);
-  const [searchResults, setSearchResults] = useState(gas);
+  const [searchResults, setSearchResults] = useState(hadits);
+  const [value, setValue] = useState("malam");
 
-  // const [value, setValue] = useState("permulaan");
-  // const fetcher = (url) => fetch(url).then((r) => r.json());
+  useEffect(() => {
+    const fetchHadits = async () => {
+      const res = await axios.get(
+        `http://localhost:3000/api/bukhari?search=${value}`
+      );
+      setSearchResults(res.data);
+    };
+    fetchHadits();
+  }, [value]);
 
-  // const { data, error } = useSWR(
-  //   `http://localhost:3000/api/bukhari?search=${value}`,
-  //   fetcher
-  // );
-  // console.log(data);
+  if (!searchResults) return setSearchResults(hadits);
 
-  // console.log(App());
-  //
-
-  // const { dataT, error } = useSWR(
-  //   `http://localhost:3000/api/bukhari?search=${value}`,
-  //   (url) =>
-  //     fetch(url)
-  //       .then((results) => results.json())
-  //       .then((results) => results)
-  // );
-
-  // console.log(dataT.data);
-  // function searchgan(e) {
-  //   setValue(e.target.value);
-  // }
-  // console.log(hadits);
-  const listHadits = hadits.map((res) => {
-    return (
-      <Card
-        koleksi={res.koleksi}
-        key={res.id}
-        id={res.id}
-        terjemah={res.terjemah}
-        arab={res.arab}
-        babNama={res.bab_nama}
-        babArab={res.bab_arab}
-        babId={res.bab_id}
-        kitabNama={res.kitab_nama}
-        kitabArab={res.kitab_arab}
-        kitabId={res.kitab_id}
-      />
-    );
-  });
+  console.log(searchResults);
 
   return (
     <div className="container mx-auto">
@@ -58,11 +31,19 @@ export default function AllHadits(props) {
         <h2 className="text-3xl font-extrabold bg-gradient-to-tr from-blue-700 to-cyan-500 bg-clip-text text-transparent p-3">
           Semua Hadits di Shahih Al-Bukhari
         </h2>
-        <SearchBar hadits={hadits} setSearchResults={setSearchResults} />
+        <SearchBar
+          hadits={hadits}
+          setSearchResults={setSearchResults}
+          setValue={setValue}
+        />
       </div>
-      {/* replace ku komponen */}
-      <ListPage searchResults={searchResults} />
-      {/* <!-- pagination --> */}
+
+      <ListPage
+        searchResults={searchResults}
+        hadits={hadits}
+        setSearchResults={setSearchResults}
+      />
+
       <div className="pagination w-11/12 md:max-w-4xl flex justify-center mx-auto mt-10">
         <div className="flex items-center justify-between border-t border-gray-200 bg-white dark:bg-slate-800 dark:border-slate-800 rounded px-4 py-3 sm:px-6">
           <div className="flex flex-1 justify-between sm:hidden">

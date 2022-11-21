@@ -9,20 +9,38 @@ export default async function getAllBukhari(
   res: NextApiResponse<Data>
 ) {
   try {
-    console.log(req.query.search);
+    // console.log(req.query.search);
+    // const agg = [
+    //   {
+    //     $search: {
+    //       index: "bukhariIndex",
+    //       autocomplete: {
+    //         query: `${req.query.search}`,
+    //         path: "terjemah",
+    //       },
+    //     },
+    //   },
+    //   { $limit: 5 },
+    //   { $project: { _id: 0, terjemah: 1 } },
+    // ];
+    const sc = req.query.search;
     const agg = [
       {
         $search: {
           index: "bukhariIndex",
-          autocomplete: {
-            query: `${req.query.search}`,
-            path: "terjemah",
+          text: {
+            query: `permulaan ${sc}`,
+            path: {
+              wildcard: "*",
+            },
           },
         },
       },
-      { $limit: 5 },
-      { $project: { _id: 0, terjemah: 1 } },
+      {
+        $limit: 10,
+      },
     ];
+    console.log(agg[0].$search.text);
     const sunnah = await Bukhari.getAllBukhari(agg);
 
     res.json({

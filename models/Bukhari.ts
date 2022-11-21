@@ -1,11 +1,11 @@
 const { collectionBukhari } = require("../config/database");
 
 // Query for a All hadits Bukhari
-const getAllBukhari = () => {
-  // return collectionBukhari.aggregate(agg).toArray();
-  const query = {};
-  const option = {};
-  return collectionBukhari.find(query, option).toArray();
+const getAllBukhari = (agg) => {
+  return collectionBukhari.aggregate(agg).toArray();
+  // const query = {};
+  // const option = { limit: 5 };
+  // return collectionBukhari.find(query, option).toArray();
 };
 
 // Query for a One hadits Bukhari
