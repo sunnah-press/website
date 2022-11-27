@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const Card = (dits) => {
   return (
     <div className="card bg-slate-50 dark:bg-slate-800 dark:text-slate-200 w-11/12 md:w-full border dark:border-slate-900 rounded text-sm">
@@ -7,9 +9,12 @@ const Card = (dits) => {
       <div className="card-body p-4 text-center flex flex-col gap-4">
         <p className="arabic1 text-xl">{dits.arab}</p>
         <p className="artinya">{dits.terjemah}</p>
-        <button className="card-title p-2 bg-blue-500 rounded hover:ring focus:ring text-center text-white font-semibold">
+        <Link
+          href={`/bukhari/${dits.id}`}
+          className="p-2 bg-blue-500 rounded hover:ring hover:text-white focus:ring text-center text-white font-semibold"
+        >
           Lihat
-        </button>
+        </Link>
       </div>
     </div>
   );
