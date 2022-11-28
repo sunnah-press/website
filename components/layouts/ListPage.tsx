@@ -1,3 +1,4 @@
+import { MyComponent } from "./Animation";
 import Card from "./Card";
 
 const ListPage = ({ searchResults, hadits, setSearchResults }) => {
@@ -16,13 +17,13 @@ const ListPage = ({ searchResults, hadits, setSearchResults }) => {
   const content = results?.length ? (
     results
   ) : (
-    <article>
-      <p>Tidak ada</p>
-    </article>
+    <div className="flex justify-center">
+      <MyComponent />
+    </div>
   );
 
   return (
-    <div className="cards grid grid-cols-1 justify-items-center gap-4 text-slate-900 md:max-w-4xl md:mx-auto md:grid-cols-2">
+    <div className="cards flex flex-col items-center gap-4 text-slate-900 md:max-w-4xl md:mx-auto">
       {content}
     </div>
   );

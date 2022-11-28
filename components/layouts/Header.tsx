@@ -71,7 +71,6 @@ export default function Header() {
         <button
           className="menu-mobile md:hidden p-1 border rounded hover:bg-slate-700/20 dark:bg-slate-600 dark:border-slate-400/10 dark:hover:bg-sky-700 dark:focus:bg-sky-700 z-50"
           aria-controls="primary-nav"
-          // onClick={mobileMenuToggle}
         >
           <svg className="h-6 w-6" viewBox="0 0 20 20" fill="none">
             <path
@@ -121,11 +120,7 @@ export default function Header() {
               </a>
             </li>
             <li className="p-2">
-              <button
-                href="#"
-                className="menu-cari group flex items-center gap-3 hover:text-slate-600 focus:text-slate-600 dark:hover:text-slate-300 dark:focus:text-slate-300"
-                // onClick={menuCariToggle}
-              >
+              <button className="menu-cari group flex items-center gap-3 hover:text-slate-600 focus:text-slate-600 dark:hover:text-slate-300 dark:focus:text-slate-300">
                 <div className="dark:bg-slate-700 w-6 h-6 rounded flex justify-center items-center ring-1 ring-slate-900/5 group-hover:dark:bg-blue-600 group-focus:dark:bg-blue-600 group-hover:ring-slate-900/20 group-focus:ring-slate-900/20">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
