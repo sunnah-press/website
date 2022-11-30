@@ -4,6 +4,7 @@ export const Listbook = (props) => {
   const books = props.data;
   const result = books.map((book) => (
     <Link
+      key={book._id}
       href={`/${book.slug}/book/${book._id}`}
       className="p-3 border bg-slate-200 dark:bg-slate-800 dark:border-slate-700 hover:bg-blue-600 focus:bg-blue-600 hover:text-slate-200 hover:ring rounded text-center font-semibold"
     >

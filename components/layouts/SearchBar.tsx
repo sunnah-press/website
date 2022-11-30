@@ -1,12 +1,8 @@
-// import Fuse from "fuse.js";
-
-export default function SearchBar({ setSearchResults, setValue }) {
-  // const sunnah = hadits.data;
-
+export default function SearchBar({ setSearch, setPage, search }) {
   const handleSubmit = (e) => e.preventDefault();
   const handleSearchChange = (e) => {
-    // if (!e.target.value) return setSearchResults([]);
-    setValue(e.target.value);
+    setSearch(e.target.value);
+    setPage(1);
   };
   return (
     <form className="flex justify-center mt-10" onSubmit={handleSubmit}>

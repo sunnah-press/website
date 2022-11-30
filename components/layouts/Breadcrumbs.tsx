@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export const Breadcrumbs = ({ hadith }) => {
+export const Breadcrumbs = ({ hadits }) => {
   return (
     <div className="container mt-32 md:max-w-3xl w-11/12 flex mx-auto self-center justify-center">
       <div className="breadcrumbs p-4 rounded flex flex-wrap items-center gap-2 md:text-sm text-xs justify-center bg-slate-100 text-slate-900 border dark:text-slate-400 dark:bg-slate-800 dark:border-slate-800">
@@ -49,8 +49,8 @@ export const Breadcrumbs = ({ hadith }) => {
             />
           </g>
         </svg>
-        <Link href={`${hadith?.slug ? hadith.slug : ""}/books`}>
-          {hadith?.koleksi ? hadith.koleksi : ""}
+        <Link href={`/${hadits?.slug ? hadits.slug : ""}/books`}>
+          {hadits?.koleksi ? hadits.koleksi : ""}
         </Link>
         <svg
           version="1.0"
@@ -73,11 +73,11 @@ export const Breadcrumbs = ({ hadith }) => {
           </g>
         </svg>
         <Link
-          href={`${hadith?.slug ? hadith.slug : ""}/book/${
-            hadith?.kitab_id ? hadith.kitab_id : ""
+          href={`/${hadits?.slug ? hadits.slug : ""}/book/${
+            hadits?.kitab_id ? hadits.kitab_id : ""
           }`}
         >
-          {hadith?.kitab_nama ? hadith.kitab_nama : ""}
+          {hadits?.kitab_nama ? hadits.kitab_nama : ""}
         </Link>
       </div>
     </div>

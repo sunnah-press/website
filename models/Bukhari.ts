@@ -1,14 +1,8 @@
-const { collectionBukhari, find, aggregate } = require("../config/database");
+const { collectionBukhari } = require("../config/database");
 
 // Query for a All hadits Bukhari
 const getAllBukhari = (agg) => {
-  if (agg[0].$search.text.query === "undefined") {
-    const query = {};
-    const option = { limit: 4 };
-    return find(query, option).sort({ id: 1 }).toArray();
-  }
-
-  return aggregate(agg).toArray();
+  return collectionBukhari.aggregate(agg).toArray();
 };
 
 // Query for a One hadits Bukhari
@@ -40,9 +34,9 @@ const getAllBookBukhari = () => {
 };
 
 // Query for a One book of Bukhari
-const getOneBookBukhari = (id) => {
+const getOneBookBukhari = (id, page) => {
   const query = { kitab_id: id };
-  const option = { limit: 4 };
+  const option = { skip: (page - 1) * 4, limit: 4 };
   return collectionBukhari.find(query, option).sort({ id: 1 }).toArray();
 };
 

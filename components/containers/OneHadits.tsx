@@ -1,19 +1,30 @@
 import { Breadcrumbs } from "../layouts/Breadcrumbs";
 import { Loader } from "../layouts/Loader/Loader";
-import { Loader1 } from "../layouts/Loader/Loader1";
+import { Pagination } from "../layouts/pagination/Pagination";
 import { Table } from "../layouts/Table";
 
 export const OneHadits = (props) => {
-  const hadith = props.data;
+  if (props.hadits.current_page === "undefined") return <Loader />;
+  const hadits = props.hadits.data;
+  // console.log(hadits);
+  const totalHadits = props.hadits.totalData;
+  const slug = hadits?.slug ? hadits.slug : "";
+  const numhadits = props.id;
   const results =
-    hadith === undefined ? (
+    hadits === undefined ? (
       <Loader />
     ) : (
       <>
-        <Breadcrumbs hadith={hadith} />
+        <Breadcrumbs hadits={hadits} />
 
-        <Table hadith={hadith} />
+        <Table hadits={hadits} />
+        <Pagination
+          numHadits={numhadits}
+          slug={slug}
+          totalHadits={totalHadits}
+        />
       </>
     );
+
   return <>{results}</>;
 };

@@ -5,6 +5,7 @@ export const Loader = () => {
   return (
     <div className="flex flex-col items-center mt-32">
       <ContentLoader
+        uniqueKey="products1"
         speed={2}
         width={400}
         height={90}
@@ -16,6 +17,7 @@ export const Loader = () => {
       </ContentLoader>
 
       <ContentLoader
+        uniqueKey="products2"
         className="w-11/12"
         speed={2}
         backgroundColor="#64748B"
@@ -27,6 +29,7 @@ export const Loader = () => {
       </ContentLoader>
 
       <ContentLoader
+        uniqueKey="products3"
         className="w-11/12"
         height="400"
         backgroundColor="#64748B"
