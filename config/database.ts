@@ -13,6 +13,13 @@ const client = new MongoClient(uri, {
 
 const database = client.db("hadits");
 const collectionBukhari = database.collection("bukhari");
+const collectionAllBook = database.collection("allbook");
+
 // const find = (query, option) => collectionBukhari.find(query, option);
 // const aggregate = (agg) => collectionBukhari.aggregate(agg);
-module.exports = { collectionBukhari, client };
+module.exports = {
+  collectionBukhari,
+  client,
+  collectionAllBook,
+  database,
+};
