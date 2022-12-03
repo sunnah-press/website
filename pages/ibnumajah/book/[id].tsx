@@ -15,7 +15,7 @@ export default function book() {
 
   useEffect(() => {
     setBookId(id);
-    setSlug("bukhari");
+    setSlug("ibnumajah");
   }, [id]);
 
   return (

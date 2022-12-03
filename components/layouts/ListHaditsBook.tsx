@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useCallback, useRef } from "react";
 import Card from "./Card";
+import ListPage from "./ListPage";
 import { Loader } from "./Loader/Loader";
 
 export const ListHaditsBook = ({ hadits, setPage, loading, hasMore }) => {
@@ -172,9 +173,7 @@ export const ListHaditsBook = ({ hadits, setPage, loading, hasMore }) => {
         </table>
       </div>
 
-      <div className="cards flex flex-col justify-items-center gap-4 text-slate-900 md:max-w-4xl md:mx-auto">
-        {content}
-      </div>
+      <ListPage>{content}</ListPage>
     </>
   );
 };

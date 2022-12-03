@@ -91,8 +91,8 @@ export default function Header() {
         >
           <ul className="mt-20 pl-3 text-slate-700 text-base font-bold dark:text-slate-400 md:flex md:m-0 md:px-3">
             <li className="p-2">
-              <a
-                href="#"
+              <Link
+                href="/"
                 className="group flex items-center gap-3 hover:text-slate-600 focus:text-slate-600 dark:hover:text-slate-300 dark:focus:text-slate-300"
               >
                 <div className="dark:bg-slate-700 w-6 h-6 rounded flex justify-center items-center ring-1 group-hover:dark:bg-emerald-600 group-focus:dark:bg-emerald-600 group-hover:ring-slate-900/20 group-focus:ring-slate-900/20 ring-slate-900/5">
@@ -117,7 +117,7 @@ export default function Header() {
                   </svg>
                 </div>
                 Beranda
-              </a>
+              </Link>
             </li>
             <li className="p-2">
               <button className="menu-cari group flex items-center gap-3 hover:text-slate-600 focus:text-slate-600 dark:hover:text-slate-300 dark:focus:text-slate-300">
@@ -257,8 +257,8 @@ export default function Header() {
               </ul>
             </li>
             <li className="p-2">
-              <a
-                href="#"
+              <Link
+                href="/donation"
                 className="group flex items-center gap-3 hover:text-slate-600 focus:text-slate-600 dark:hover:text-slate-300 dark:focus:text-slate-300"
               >
                 <div className="dark:bg-slate-700 w-6 h-6 rounded flex justify-center items-center ring-1 ring-slate-900/5 group-hover:dark:bg-red-600 group-focus:dark:bg-red-600 group-hover:ring-slate-900/20 group-focus:ring-slate-900/20">
@@ -279,7 +279,7 @@ export default function Header() {
                   </svg>
                 </div>
                 Donasi
-              </a>
+              </Link>
             </li>
             <li className="md:ml-10 p-2">
               <button className="menu-mode group flex items-center gap-3 hover:text-slate-600 focus:text-slate-600 dark:hover:text-slate-300 dark:focus:text-slate-300">
