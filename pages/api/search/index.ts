@@ -9,10 +9,17 @@ export default async function getAll(
   res: NextApiResponse<Data>
 ) {
   try {
+    await collectionAllBook.createIndex({
+      terjemah: "text",
+      kitab_nama: "text",
+      arab: "text",
+      koleksi: "text",
+    });
+
     const sc = req.query.search;
     const page = parseInt(req.query.page) || 1;
     const haditsPerPage = parseInt(req.query.limit) || 4;
-    console.log(req.query);
+
     function containsOnlyNumbers(str) {
       return /^\d+$/.test(str);
     }
@@ -31,7 +38,7 @@ export default async function getAll(
         .toArray()
         .then((result) => {
           res.json({
-            message: "Get All Hadits Bukhari Success!",
+            message: "Get All Hadits Success!",
             current_page: page,
             per_page: haditsPerPage,
             data: result,
@@ -44,16 +51,20 @@ export default async function getAll(
           });
         });
     }
-    const gas = { $text: { $search: "123" } };
-    // console.log(agg[0].$search.text);
-    collectionAllBook
-      .find()
+
+    const query =
+      { $text: { $search: sc } } && req.query.search
+        ? { $text: { $search: sc } }
+        : {};
+
+    return collectionAllBook
+      .find(query)
       .skip((page - 1) * haditsPerPage)
       .limit(haditsPerPage)
       .toArray()
       .then((result) => {
         return res.json({
-          message: "succes",
+          message: "Get All Hadits Success!",
           data: result,
         });
       });

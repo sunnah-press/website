@@ -1,4 +1,4 @@
-const { collectionBukhari } = require("../../../config/database");
+const { collectionAbudawud } = require("../../../config/database");
 
 type Data = {
   name: string;
@@ -9,7 +9,7 @@ export default async function getAll(
   res: NextApiResponse<Data>
 ) {
   try {
-    await collectionBukhari.createIndex({
+    await collectionAbudawud.createIndex({
       terjemah: "text",
       kitab_nama: "text",
       arab: "text",
@@ -25,7 +25,7 @@ export default async function getAll(
     }
     const agg1 = [{ $match: { $text: { $search: `${sc}` } } }];
 
-    const countAllData = await collectionBukhari.countDocuments();
+    const countAllData = await collectionAbudawud.countDocuments();
     let countSearchResult;
 
     if (!containsOnlyNumbers(sc) && req.query.search != undefined) {
@@ -33,10 +33,10 @@ export default async function getAll(
         { $match: { $text: { $search: `${sc}` } } },
         { $count: "count" },
       ];
-      countSearchResult = await collectionBukhari.aggregate(agg2).toArray();
+      countSearchResult = await collectionAbudawud.aggregate(agg2).toArray();
 
       if (countSearchResult[0] != undefined) {
-        return collectionBukhari
+        return collectionAbudawud
           .aggregate(agg1)
           .skip((page - 1) * haditsPerPage)
           .limit(haditsPerPage)
@@ -73,9 +73,9 @@ export default async function getAll(
         { $match: { idStr: { $regex: num, $options: "i" } } },
         { $count: "count" },
       ];
-      countSearchResult = await collectionBukhari.aggregate(agss).toArray();
+      countSearchResult = await collectionAbudawud.aggregate(agss).toArray();
 
-      return collectionBukhari
+      return collectionAbudawud
         .aggregate(ags)
         .toArray()
         .then((result) => {
@@ -97,7 +97,7 @@ export default async function getAll(
     }
 
     if (agg1[0].$match.$text.$search === "" || "undefined") {
-      return collectionBukhari
+      return collectionAbudawud
         .find()
         .sort({ id: 1 })
         .skip((page - 1) * haditsPerPage)

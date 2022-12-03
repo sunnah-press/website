@@ -1,8 +1,8 @@
-const { collectionBukhari } = require("../config/database");
+const { collectionAbudawud } = require("../config/database");
 
-// Query for a All Book
+// Query for a All Books
 const getAllBook = () => {
-  return collectionBukhari
+  return collectionAbudawud
     .aggregate([
       {
         $group: {
@@ -27,7 +27,7 @@ const getAllBook = () => {
 const getOneBook = (id, page) => {
   const query = { kitab_id: id };
   const option = { skip: (page - 1) * 4, limit: 4 };
-  return collectionBukhari.find(query, option).sort({ id: 1 }).toArray();
+  return collectionAbudawud.find(query, option).sort({ id: 1 }).toArray();
 };
 
 module.exports = {

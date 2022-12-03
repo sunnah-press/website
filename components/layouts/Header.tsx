@@ -158,20 +158,20 @@ export default function Header() {
 
               <ul className="menu-child py-3 pl-9 flex flex-col gap-4 text-slate-800 font-semibold text-sm md:absolute md:dark:bg-slate-800 md:p-6 md:gap-4 md:rounded md:bg-white md:mt-5 hidden">
                 <li>
-                  <a
-                    href="#"
+                  <Link
+                    href="/bukhari"
                     className="dark:text-slate-400 hover:text-slate-500 dark:hover:text-slate-300 dark:focus:text-slate-300"
                   >
                     Cari di Shahih Bukhari
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="#"
+                  <Link
+                    href="/search"
                     className="dark:text-slate-400 hover:text-slate-500 dark:hover:text-slate-300 dark:focus:text-slate-300"
                   >
-                    Cari di Shahih Bukhari
-                  </a>
+                    Cari di Global
+                  </Link>
                 </li>
                 <li>
                   <a

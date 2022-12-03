@@ -46,80 +46,80 @@ export default function Homepage() {
           className="flex flex-wrap gap-2 border border-white/25 p-2 justify-center w-full rounded bg-blue-600 text-white shadow shadow-slate-900 hover:bg-blue-900 focus:bg-blue-900 hover:text-white/50 focus:text-white/50 max-w-sm"
         >
           <img src="/assets/book.png" alt="book" width="30" />
-          <div className="text-id font-bold">Shahih Al-Bukhari</div>
-          <div className="text-arab font-bold">arabic</div>
+          <div className="text-id font-bold">Shahih Muslim</div>
+          <div className="text-arab font-bold">صحيح مسلم</div>
+        </a>
+        <Link
+          href="/abudawud"
+          className="flex flex-wrap gap-2 border border-white/25 p-2 justify-center w-full rounded bg-blue-600 text-white shadow shadow-slate-900 hover:bg-blue-900 focus:bg-blue-900 hover:text-white/50 focus:text-white/50 max-w-sm"
+        >
+          <img src="/assets/book.png" alt="book" width="30" />
+          <div className="text-id font-bold">Sunan Abu Dawud</div>
+          <div className="text-arab font-bold">سنن أبي داود</div>
+        </Link>
+        <a
+          href="#"
+          className="flex flex-wrap gap-2 border border-white/25 p-2 justify-center w-full rounded bg-blue-600 text-white shadow shadow-slate-900 hover:bg-blue-900 focus:bg-blue-900 hover:text-white/50 focus:text-white/50 max-w-sm"
+        >
+          <img src="/assets/book.png" alt="book" width="30" />
+          <div className="text-id font-bold">Jami' At-Tirmidzi</div>
+          <div className="text-arab font-bold">جامع الترمذي </div>
         </a>
         <a
           href="#"
           className="flex flex-wrap gap-2 border border-white/25 p-2 justify-center w-full rounded bg-blue-600 text-white shadow shadow-slate-900 hover:bg-blue-900 focus:bg-blue-900 hover:text-white/50 focus:text-white/50 max-w-sm"
         >
           <img src="/assets/book.png" alt="book" width="30" />
-          <div className="text-id font-bold">Shahih Al-Bukhari</div>
-          <div className="text-arab font-bold">arabic</div>
+          <div className="text-id font-bold">Sunan Nasa'i</div>
+          <div className="text-arab font-bold">سنن النسائي</div>
         </a>
         <a
           href="#"
           className="flex flex-wrap gap-2 border border-white/25 p-2 justify-center w-full rounded bg-blue-600 text-white shadow shadow-slate-900 hover:bg-blue-900 focus:bg-blue-900 hover:text-white/50 focus:text-white/50 max-w-sm"
         >
           <img src="/assets/book.png" alt="book" width="30" />
-          <div className="text-id font-bold">Shahih Al-Bukhari</div>
-          <div className="text-arab font-bold">arabic</div>
+          <div className="text-id font-bold">Sunan Ibnu Majah</div>
+          <div className="text-arab font-bold">سنن ابن ماجه</div>
         </a>
         <a
           href="#"
           className="flex flex-wrap gap-2 border border-white/25 p-2 justify-center w-full rounded bg-blue-600 text-white shadow shadow-slate-900 hover:bg-blue-900 focus:bg-blue-900 hover:text-white/50 focus:text-white/50 max-w-sm"
         >
           <img src="/assets/book.png" alt="book" width="30" />
-          <div className="text-id font-bold">Shahih Al-Bukhari</div>
-          <div className="text-arab font-bold">arabic</div>
+          <div className="text-id font-bold">Muwatha' Malik</div>
+          <div className="text-arab font-bold">موطأ مالك</div>
         </a>
         <a
           href="#"
           className="flex flex-wrap gap-2 border border-white/25 p-2 justify-center w-full rounded bg-blue-600 text-white shadow shadow-slate-900 hover:bg-blue-900 focus:bg-blue-900 hover:text-white/50 focus:text-white/50 max-w-sm"
         >
           <img src="/assets/book.png" alt="book" width="30" />
-          <div className="text-id font-bold">Shahih Al-Bukhari</div>
-          <div className="text-arab font-bold">arabic</div>
+          <div className="text-id font-bold">Musnad Ahmad</div>
+          <div className="text-arab font-bold">مسند أحمد</div>
         </a>
         <a
           href="#"
           className="flex flex-wrap gap-2 border border-white/25 p-2 justify-center w-full rounded bg-blue-600 text-white shadow shadow-slate-900 hover:bg-blue-900 focus:bg-blue-900 hover:text-white/50 focus:text-white/50 max-w-sm"
         >
           <img src="/assets/book.png" alt="book" width="30" />
-          <div className="text-id font-bold">Shahih Al-Bukhari</div>
-          <div className="text-arab font-bold">arabic</div>
+          <div className="text-id font-bold">Sunan Darimi</div>
+          <div className="text-arab font-bold">سنن الدارمي</div>
         </a>
         <a
           href="#"
           className="flex flex-wrap gap-2 border border-white/25 p-2 justify-center w-full rounded bg-blue-600 text-white shadow shadow-slate-900 hover:bg-blue-900 focus:bg-blue-900 hover:text-white/50 focus:text-white/50 max-w-sm"
         >
           <img src="/assets/book.png" alt="book" width="30" />
-          <div className="text-id font-bold">Shahih Al-Bukhari</div>
-          <div className="text-arab font-bold">arabic</div>
+          <div className="text-id font-bold">Riyadhus Shalihin</div>
+          <div className="text-arab font-bold">رياض الصالحين </div>
         </a>
         <a
           href="#"
           className="flex flex-wrap gap-2 border border-white/25 p-2 justify-center w-full rounded bg-blue-600 text-white shadow shadow-slate-900 hover:bg-blue-900 focus:bg-blue-900 hover:text-white/50 focus:text-white/50 max-w-sm"
         >
           <img src="/assets/book.png" alt="book" width="30" />
-          <div className="text-id font-bold">Shahih Al-Bukhari</div>
-          <div className="text-arab font-bold">arabic</div>
-        </a>
-        <a
-          href="#"
-          className="flex flex-wrap gap-2 border border-white/25 p-2 justify-center w-full rounded bg-blue-600 text-white shadow shadow-slate-900 hover:bg-blue-900 focus:bg-blue-900 hover:text-white/50 focus:text-white/50 max-w-sm"
-        >
-          <img src="/assets/book.png" alt="book" width="30" />
-          <div className="text-id font-bold">Shahih Al-Bukhari</div>
-          <div className="text-arab font-bold">arabic</div>
-        </a>
-        <a
-          href="#"
-          className="flex flex-wrap gap-2 border border-white/25 p-2 justify-center w-full rounded bg-blue-600 text-white shadow shadow-slate-900 hover:bg-blue-900 focus:bg-blue-900 hover:text-white/50 focus:text-white/50 max-w-sm"
-        >
-          <img src="/assets/book.png" alt="book" width="30" />
-          <div className="text-id font-bold">Shahih Al-Bukhari</div>
-          <div className="text-arab font-bold">arabic</div>
+          <div className="text-id font-bold">Musnad Syafii</div>
+          <div className="text-arab font-bold">مسند الامام الشافعي</div>
         </a>
       </div>
     </div>

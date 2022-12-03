@@ -1,4 +1,4 @@
-export default function SearchBar({ setSearch, setPage, search }) {
+export default function SearchBar({ setSearch, setPage }) {
   const handleSubmit = (e) => e.preventDefault();
   const handleSearchChange = (e) => {
     setSearch(e.target.value);

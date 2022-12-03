@@ -6,11 +6,11 @@ import Card from "../layouts/Card";
 import { MyComponent } from "../layouts/Animation";
 import Link from "next/link";
 
-export default function AllHadits() {
-  const slug = "bukhari";
+export default function AllHadits({ slug, coll }) {
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
   const [limit, setLimit] = useState(4);
+
   const { loading, error, hadits, hasMore } = useHaditsSearch(
     search,
     page,
@@ -53,7 +53,7 @@ export default function AllHadits() {
             <p className="arabic1 text-xl">{dits.arab}</p>
             <p className="artinya">{dits.terjemah}</p>
             <Link
-              href={`/bukhari/${dits.id}`}
+              href={`/${dits.slug}/${dits.id}`}
               className="p-2 bg-blue-500 rounded hover:ring hover:text-white focus:ring text-center text-white font-semibold"
             >
               Lihat
@@ -69,6 +69,7 @@ export default function AllHadits() {
           terjemah={dits.terjemah}
           arab={dits.arab}
           koleksi={dits.koleksi}
+          slug={dits.slug}
         />
       );
     }
@@ -84,7 +85,7 @@ export default function AllHadits() {
     <div className="container mx-auto">
       <div className="hero text-center mt-32 mb-10 w-4/5 mx-auto">
         <h2 className="text-3xl font-extrabold bg-gradient-to-tr from-blue-700 to-cyan-500 bg-clip-text text-transparent p-3">
-          Semua Hadits di Shahih Al-Bukhari
+          Semua Hadits di {coll}
         </h2>
         <SearchBar setSearch={setSearch} setPage={setPage} search={search} />
       </div>

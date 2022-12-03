@@ -1,19 +1,19 @@
-const { collectionBukhari } = require("../../../config/database");
+const { collectionAbudawud } = require("../../../config/database");
 
 export default async function handler(req, res) {
-  const { bukhariid } = req.query;
+  const { id } = req.query;
   // const page = parseInt(req.query.page) || 1;
   const haditsPerPage = parseInt(req.query.limit) || 1;
 
   let totalItems;
-  return collectionBukhari
+  return collectionAbudawud
     .countDocuments()
     .then((count) => {
       totalItems = count;
-      return collectionBukhari
+      return collectionAbudawud
         .find()
         .sort({ id: 1 })
-        .skip((bukhariid - 1) * haditsPerPage)
+        .skip((id - 1) * haditsPerPage)
         .limit(haditsPerPage)
         .toArray();
     })
@@ -21,7 +21,7 @@ export default async function handler(req, res) {
       res.json({
         message: "Get All Hadits Bukhari Success!",
         totalData: totalItems,
-        current_page: bukhariid,
+        current_page: id,
         per_page: haditsPerPage,
         data: result[0],
       });

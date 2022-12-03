@@ -22,19 +22,12 @@ export default function useHaditsSearch(search, page, limit, slug) {
       cancelToken: source.token,
     })
       .then((res) => {
-        if (res.data.data[0].docs === undefined) {
-          setHasMore(res.data.data.length > 0);
-          setLoading(false);
-          return setHadits((prevHadits) => {
-            return [...new Set([...prevHadits, ...res.data.data])];
-          });
-        }
-
+        // console.log(res);
         setHadits((prevHadits) => {
-          return [...new Set([...prevHadits, ...res.data.data[0].docs])];
+          return [...new Set([...prevHadits, ...res.data.data])];
         });
 
-        setHasMore(res.data.data[0].docs.length > 0);
+        setHasMore(res.data.data.length > 0);
         setLoading(false);
       })
       .catch((e) => {
@@ -43,7 +36,7 @@ export default function useHaditsSearch(search, page, limit, slug) {
       });
 
     return () => source.cancel();
-  }, [search, page]);
+  }, [search, page, slug]);
 
   return { loading, error, hadits, hasMore };
 }
