@@ -12,7 +12,7 @@ export default function hadits() {
   useEffect(() => {
     axios({
       method: "GET",
-      url: `http://localhost:3000/api/bukhari/${id}`,
+      url: `/api/bukhari/${id}`,
     })
       .then((res) => {
         setHadits(res.data);

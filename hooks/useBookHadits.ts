@@ -1,23 +1,24 @@
 import axios, { Axios } from "axios";
 import { useEffect, useState } from "react";
-
+// require("dotenv").config();
 export default function useBookHadits(bookid, page, slug) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [hadits, setHadits] = useState([]);
   const [hasMore, setHasMore] = useState(false);
-
+  const url = process.env.URL;
   useEffect(() => {
     setLoading(true);
     setError(false);
     let source = axios.CancelToken.source();
     axios({
       method: "GET",
-      url: `http://localhost:3000/api/${slug}/book/${bookid}`,
+      url: `/api/${slug}/book/${bookid}`,
       params: { id: bookid, page },
       cancelToken: source.token,
     })
       .then((res) => {
+        // console.log(res);
         setHadits((prevHadits) => {
           return [...new Set([...prevHadits, ...res.data])];
         });

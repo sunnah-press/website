@@ -1,7 +1,8 @@
+import axios from "axios";
 import Layout from "../../../components/layouts/Layout";
 import { Listbook } from "../../../components/layouts/Listbook";
 import Main from "../../../components/layouts/Main";
-
+// require("dotenv").config();
 export default function index({ books }) {
   return (
     <Layout>
@@ -11,7 +12,9 @@ export default function index({ books }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch("http://localhost:3000/api/abudawud/books");
+  const url = process.env.URL;
+
+  const res = await fetch(url + "/api/abudawud/books");
   const books = await res.json();
   return {
     props: { books },

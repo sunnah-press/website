@@ -6,7 +6,7 @@ export default function useHaditsSearch(search, page, limit, slug) {
   const [error, setError] = useState(false);
   const [hadits, setHadits] = useState([]);
   const [hasMore, setHasMore] = useState(false);
-
+  const url = process.env.URL;
   useEffect(() => {
     setHadits([]);
   }, [search]);
@@ -17,7 +17,7 @@ export default function useHaditsSearch(search, page, limit, slug) {
     let source = axios.CancelToken.source();
     axios({
       method: "GET",
-      url: `http://localhost:3000/api/${slug}`,
+      url: `/api/${slug}`,
       params: { search, page, limit },
       cancelToken: source.token,
     })

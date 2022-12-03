@@ -11,7 +11,8 @@ export default function index({ books }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch("http://localhost:3000/api/ibnumajah/books");
+  const url = process.env.URL;
+  const res = await fetch(url + "/api/ibnumajah/books");
   const books = await res.json();
   return {
     props: { books },
