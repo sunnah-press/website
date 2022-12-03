@@ -10,7 +10,7 @@ export default function Homepage() {
         <h2 className="text-3xl font-extrabold bg-gradient-to-tr from-blue-700 to-cyan-500 bg-clip-text text-transparent p-3">
           (صلى الله عليه و سلم)
         </h2>
-        <form action="" className="flex justify-center mt-10">
+        {/* <form action="" className="flex justify-center mt-10">
           <div className="w-full h-11 bg-slate-500 block max-w-sm rounded-tl-lg rounded-bl-lg">
             <input
               type="search"
@@ -30,7 +30,7 @@ export default function Homepage() {
               ></path>
             </svg>
           </button>
-        </form>
+        </form> */}
       </div>
       <div className="grid w-11/12 justify-items-center gap-4 md:grid-cols-2 md:w-3/5 mx-auto max-w-2xl">
         <Link
@@ -41,14 +41,14 @@ export default function Homepage() {
           <div className="text-id font-bold">Shahih Al-Bukhari</div>
           <div className="text-arab font-bold">صحيح البخاري</div>
         </Link>
-        <a
-          href="#"
+        <Link
+          href="/muslim"
           className="flex flex-wrap gap-2 border border-white/25 p-2 justify-center w-full rounded bg-blue-600 text-white shadow shadow-slate-900 hover:bg-blue-900 focus:bg-blue-900 hover:text-white/50 focus:text-white/50 max-w-sm"
         >
           <img src="/assets/book.png" alt="book" width="30" />
           <div className="text-id font-bold">Shahih Muslim</div>
           <div className="text-arab font-bold">صحيح مسلم</div>
-        </a>
+        </Link>
         <Link
           href="/abudawud"
           className="flex flex-wrap gap-2 border border-white/25 p-2 justify-center w-full rounded bg-blue-600 text-white shadow shadow-slate-900 hover:bg-blue-900 focus:bg-blue-900 hover:text-white/50 focus:text-white/50 max-w-sm"
@@ -57,70 +57,70 @@ export default function Homepage() {
           <div className="text-id font-bold">Sunan Abu Dawud</div>
           <div className="text-arab font-bold">سنن أبي داود</div>
         </Link>
-        <a
-          href="#"
+        <Link
+          href="/tirmidzi"
           className="flex flex-wrap gap-2 border border-white/25 p-2 justify-center w-full rounded bg-blue-600 text-white shadow shadow-slate-900 hover:bg-blue-900 focus:bg-blue-900 hover:text-white/50 focus:text-white/50 max-w-sm"
         >
           <img src="/assets/book.png" alt="book" width="30" />
           <div className="text-id font-bold">Jami' At-Tirmidzi</div>
           <div className="text-arab font-bold">جامع الترمذي </div>
-        </a>
-        <a
-          href="#"
+        </Link>
+        <Link
+          href="/nasai"
           className="flex flex-wrap gap-2 border border-white/25 p-2 justify-center w-full rounded bg-blue-600 text-white shadow shadow-slate-900 hover:bg-blue-900 focus:bg-blue-900 hover:text-white/50 focus:text-white/50 max-w-sm"
         >
           <img src="/assets/book.png" alt="book" width="30" />
           <div className="text-id font-bold">Sunan Nasa'i</div>
           <div className="text-arab font-bold">سنن النسائي</div>
-        </a>
-        <a
-          href="#"
+        </Link>
+        <Link
+          href="/ibnumajah"
           className="flex flex-wrap gap-2 border border-white/25 p-2 justify-center w-full rounded bg-blue-600 text-white shadow shadow-slate-900 hover:bg-blue-900 focus:bg-blue-900 hover:text-white/50 focus:text-white/50 max-w-sm"
         >
           <img src="/assets/book.png" alt="book" width="30" />
           <div className="text-id font-bold">Sunan Ibnu Majah</div>
           <div className="text-arab font-bold">سنن ابن ماجه</div>
-        </a>
-        <a
-          href="#"
+        </Link>
+        <Link
+          href="/malik"
           className="flex flex-wrap gap-2 border border-white/25 p-2 justify-center w-full rounded bg-blue-600 text-white shadow shadow-slate-900 hover:bg-blue-900 focus:bg-blue-900 hover:text-white/50 focus:text-white/50 max-w-sm"
         >
           <img src="/assets/book.png" alt="book" width="30" />
           <div className="text-id font-bold">Muwatha' Malik</div>
           <div className="text-arab font-bold">موطأ مالك</div>
-        </a>
-        <a
-          href="#"
+        </Link>
+        <Link
+          href="/ahmad"
           className="flex flex-wrap gap-2 border border-white/25 p-2 justify-center w-full rounded bg-blue-600 text-white shadow shadow-slate-900 hover:bg-blue-900 focus:bg-blue-900 hover:text-white/50 focus:text-white/50 max-w-sm"
         >
           <img src="/assets/book.png" alt="book" width="30" />
           <div className="text-id font-bold">Musnad Ahmad</div>
           <div className="text-arab font-bold">مسند أحمد</div>
-        </a>
-        <a
-          href="#"
+        </Link>
+        <Link
+          href="/darimi"
           className="flex flex-wrap gap-2 border border-white/25 p-2 justify-center w-full rounded bg-blue-600 text-white shadow shadow-slate-900 hover:bg-blue-900 focus:bg-blue-900 hover:text-white/50 focus:text-white/50 max-w-sm"
         >
           <img src="/assets/book.png" alt="book" width="30" />
           <div className="text-id font-bold">Sunan Darimi</div>
           <div className="text-arab font-bold">سنن الدارمي</div>
-        </a>
-        <a
-          href="#"
+        </Link>
+        <Link
+          href="/riyadhus"
           className="flex flex-wrap gap-2 border border-white/25 p-2 justify-center w-full rounded bg-blue-600 text-white shadow shadow-slate-900 hover:bg-blue-900 focus:bg-blue-900 hover:text-white/50 focus:text-white/50 max-w-sm"
         >
           <img src="/assets/book.png" alt="book" width="30" />
           <div className="text-id font-bold">Riyadhus Shalihin</div>
           <div className="text-arab font-bold">رياض الصالحين </div>
-        </a>
-        <a
-          href="#"
+        </Link>
+        <Link
+          href="/syafii"
           className="flex flex-wrap gap-2 border border-white/25 p-2 justify-center w-full rounded bg-blue-600 text-white shadow shadow-slate-900 hover:bg-blue-900 focus:bg-blue-900 hover:text-white/50 focus:text-white/50 max-w-sm"
         >
           <img src="/assets/book.png" alt="book" width="30" />
           <div className="text-id font-bold">Musnad Syafii</div>
           <div className="text-arab font-bold">مسند الامام الشافعي</div>
-        </a>
+        </Link>
       </div>
     </div>
   );

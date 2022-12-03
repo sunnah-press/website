@@ -159,14 +159,6 @@ export default function Header() {
               <ul className="menu-child py-3 pl-9 flex flex-col gap-4 text-slate-800 font-semibold text-sm md:absolute md:dark:bg-slate-800 md:p-6 md:gap-4 md:rounded md:bg-white md:mt-5 hidden">
                 <li>
                   <Link
-                    href="/bukhari"
-                    className="dark:text-slate-400 hover:text-slate-500 dark:hover:text-slate-300 dark:focus:text-slate-300"
-                  >
-                    Cari di Shahih Bukhari
-                  </Link>
-                </li>
-                <li>
-                  <Link
                     href="/search"
                     className="dark:text-slate-400 hover:text-slate-500 dark:hover:text-slate-300 dark:focus:text-slate-300"
                   >
@@ -174,36 +166,93 @@ export default function Header() {
                   </Link>
                 </li>
                 <li>
-                  <a
-                    href="#"
+                  <Link
+                    href="/bukhari"
                     className="dark:text-slate-400 hover:text-slate-500 dark:hover:text-slate-300 dark:focus:text-slate-300"
                   >
                     Cari di Shahih Bukhari
-                  </a>
+                  </Link>
+                </li>
+
+                <li>
+                  <Link
+                    href="/muslim"
+                    className="dark:text-slate-400 hover:text-slate-500 dark:hover:text-slate-300 dark:focus:text-slate-300"
+                  >
+                    Cari di Shahih Muslim
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="#"
+                  <Link
+                    href="/abudawud"
                     className="dark:text-slate-400 hover:text-slate-500 dark:hover:text-slate-300 dark:focus:text-slate-300"
                   >
-                    Cari di Shahih Bukhari
-                  </a>
+                    Cari di Sunan Abu Dawud
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="#"
+                  <Link
+                    href="/tirmidzi"
                     className="dark:text-slate-400 hover:text-slate-500 dark:hover:text-slate-300 dark:focus:text-slate-300"
                   >
-                    Cari di Shahih Bukhari
-                  </a>
+                    Cari di Jami' At-Tirmidzi
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="#"
+                  <Link
+                    href="/nasai"
                     className="dark:text-slate-400 hover:text-slate-500 dark:hover:text-slate-300 dark:focus:text-slate-300"
                   >
-                    Cari di Shahih Bukhari
-                  </a>
+                    Cari di Sunan Nasa'i
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/ibnumajah"
+                    className="dark:text-slate-400 hover:text-slate-500 dark:hover:text-slate-300 dark:focus:text-slate-300"
+                  >
+                    Cari di Sunan Ibnu Majah
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/malik"
+                    className="dark:text-slate-400 hover:text-slate-500 dark:hover:text-slate-300 dark:focus:text-slate-300"
+                  >
+                    Cari di Muwatha' Malik
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/ahmad"
+                    className="dark:text-slate-400 hover:text-slate-500 dark:hover:text-slate-300 dark:focus:text-slate-300"
+                  >
+                    Cari di Musnad Ahmad
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/darimi"
+                    className="dark:text-slate-400 hover:text-slate-500 dark:hover:text-slate-300 dark:focus:text-slate-300"
+                  >
+                    Cari di Sunan Darimi
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/riyadhus"
+                    className="dark:text-slate-400 hover:text-slate-500 dark:hover:text-slate-300 dark:focus:text-slate-300"
+                  >
+                    Cari di Riyadhus Shalihin
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/syafii"
+                    className="dark:text-slate-400 hover:text-slate-500 dark:hover:text-slate-300 dark:focus:text-slate-300"
+                  >
+                    Cari di Musnad Syafii
+                  </Link>
                 </li>
               </ul>
             </li>
