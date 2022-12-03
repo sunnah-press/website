@@ -2,7 +2,7 @@ import Layout from "../../../components/layouts/Layout";
 import { Listbook } from "../../../components/layouts/Listbook";
 import Main from "../../../components/layouts/Main";
 
-export default function index({ books }) {
+export default function Index({ books }: any) {
   return (
     <Layout>
       <Main container={<Listbook data={books} />} />

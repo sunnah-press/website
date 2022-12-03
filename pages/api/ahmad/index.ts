@@ -1,13 +1,10 @@
 const { collectionAhmad } = require("../../../config/database");
 
-type Data = {
-  name: string;
-};
+export default async function getAll(req: any, res: any) {
+  function containsOnlyNumbers(str: any) {
+    return /^\d+$/.test(str);
+  }
 
-export default async function getAll(
-  req: NextApiRequest,
-  res: NextApiResponse<Data>
-) {
   try {
     await collectionAhmad.createIndex({
       terjemah: "text",
@@ -20,13 +17,10 @@ export default async function getAll(
     const page = parseInt(req.query.page) || 1;
     const haditsPerPage = parseInt(req.query.limit) || 4;
 
-    function containsOnlyNumbers(str) {
-      return /^\d+$/.test(str);
-    }
     const agg1 = [{ $match: { $text: { $search: `${sc}` } } }];
 
     const countAllData = await collectionAhmad.countDocuments();
-    let countSearchResult;
+    let countSearchResult: any;
 
     if (!containsOnlyNumbers(sc) && req.query.search != undefined) {
       const agg2 = [
@@ -41,7 +35,7 @@ export default async function getAll(
           .skip((page - 1) * haditsPerPage)
           .limit(haditsPerPage)
           .toArray()
-          .then((result) => {
+          .then((result: any) => {
             return res.json({
               message: "Get All Hadits Success!",
               total_data: countAllData,
@@ -51,7 +45,7 @@ export default async function getAll(
               data: result,
             });
           })
-          .catch((error) => {
+          .catch((error: any) => {
             res.status(500).json({
               message: "Server Error",
               ServerMessage: error.message,
@@ -78,7 +72,7 @@ export default async function getAll(
       return collectionAhmad
         .aggregate(ags)
         .toArray()
-        .then((result) => {
+        .then((result: any) => {
           res.json({
             message: "Get All Hadits Success!",
             total_data: countAllData,
@@ -88,7 +82,7 @@ export default async function getAll(
             data: result,
           });
         })
-        .catch((error) => {
+        .catch((error: any) => {
           res.status(500).json({
             message: "Server Error",
             ServerMessage: error.message,
@@ -104,7 +98,7 @@ export default async function getAll(
         .limit(haditsPerPage)
         .toArray()
 
-        .then((result) => {
+        .then((result: any) => {
           res.json({
             message: "Get All Hadits Success!",
             total_data: countAllData,
@@ -113,14 +107,14 @@ export default async function getAll(
             data: result,
           });
         })
-        .catch((error) => {
+        .catch((error: any) => {
           res.status(500).json({
             message: "Server Error",
             ServerMessage: error.message,
           });
         });
     }
-  } catch (error) {
+  } catch (error: any) {
     res.status(500).json({
       message: "Server Error",
       ServerMessage: error.message,

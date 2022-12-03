@@ -1,4 +1,4 @@
-export const Table = ({ hadits }) => {
+export const Table = ({ hadits }: any) => {
   return (
     <>
       <div className="mt-10 table border dark:bg-slate-800 dark:border-slate-800 rounded mx-auto md:max-w-4xl w-11/12 bg-slate-100">

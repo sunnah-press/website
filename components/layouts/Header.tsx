@@ -16,15 +16,15 @@ export default function Header() {
     const menuMode = document.querySelector(".menu-mode");
 
     // nav
-    mobileMenu.addEventListener("click", () => {
-      navigasi.setAttribute("data-visible", true);
-      navigasi.classList.toggle("invisible");
-      layarBlur.classList.toggle("hidden");
-      header.classList.toggle("h-full");
+    mobileMenu?.addEventListener("click", () => {
+      navigasi?.setAttribute("data-visible", "true");
+      navigasi?.classList.toggle("invisible");
+      layarBlur?.classList.toggle("hidden");
+      header?.classList.toggle("h-full");
     });
 
-    menuCari.addEventListener("click", () => {
-      menuChild.classList.toggle("hidden");
+    menuCari?.addEventListener("click", () => {
+      menuChild?.classList.toggle("hidden");
     });
 
     // mode
@@ -32,9 +32,9 @@ export default function Header() {
     const logo1 = document.querySelector(".logo1");
     const logo2 = document.querySelector(".logo2");
 
-    menuMode.addEventListener("click", () => {
-      logo1.classList.toggle("hidden");
-      logo2.classList.toggle("hidden");
+    menuMode?.addEventListener("click", () => {
+      logo1?.classList.toggle("hidden");
+      logo2?.classList.toggle("hidden");
 
       document.documentElement.classList.toggle("dark");
       if (document.documentElement.getAttribute("class") === "dark") {
@@ -46,8 +46,8 @@ export default function Header() {
 
     if (localStorage.theme === "dark") {
       document.documentElement.classList.add("dark");
-      logo1.classList.toggle("hidden");
-      logo2.classList.toggle("hidden");
+      logo1?.classList.toggle("hidden");
+      logo2?.classList.toggle("hidden");
     } else {
       document.documentElement.classList.remove("dark");
     }
@@ -195,7 +195,7 @@ export default function Header() {
                     href="/tirmidzi"
                     className="dark:text-slate-400 hover:text-slate-500 dark:hover:text-slate-300 dark:focus:text-slate-300"
                   >
-                    Cari di Jami' At-Tirmidzi
+                    Cari di Jami&apos; At-Tirmidzi
                   </Link>
                 </li>
                 <li>
@@ -203,7 +203,7 @@ export default function Header() {
                     href="/nasai"
                     className="dark:text-slate-400 hover:text-slate-500 dark:hover:text-slate-300 dark:focus:text-slate-300"
                   >
-                    Cari di Sunan Nasa'i
+                    Cari di Sunan Nasa&apos;i
                   </Link>
                 </li>
                 <li>
@@ -219,7 +219,7 @@ export default function Header() {
                     href="/malik"
                     className="dark:text-slate-400 hover:text-slate-500 dark:hover:text-slate-300 dark:focus:text-slate-300"
                   >
-                    Cari di Muwatha' Malik
+                    Cari di Muwatha&apos; Malik
                   </Link>
                 </li>
                 <li>

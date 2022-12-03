@@ -1,14 +1,14 @@
 const { collectionBukhari } = require("../../../config/database");
 
-export default async function handler(req, res) {
+export default async function handler(req: any, res: any) {
   const { id } = req.query;
   // const page = parseInt(req.query.page) || 1;
   const haditsPerPage = parseInt(req.query.limit) || 1;
 
-  let totalItems;
+  let totalItems: any;
   return collectionBukhari
     .countDocuments()
-    .then((count) => {
+    .then((count: any) => {
       totalItems = count;
       return collectionBukhari
         .find()
@@ -17,7 +17,7 @@ export default async function handler(req, res) {
         .limit(haditsPerPage)
         .toArray();
     })
-    .then((result) => {
+    .then((result: any) => {
       res.json({
         message: "Get All Hadits Success!",
         totalData: totalItems,
@@ -26,7 +26,7 @@ export default async function handler(req, res) {
         data: result[0],
       });
     })
-    .catch((error) => {
+    .catch((error: any) => {
       res.status(500).json({
         message: "Server Error",
         ServerMessage: error.message,

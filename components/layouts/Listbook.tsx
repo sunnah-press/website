@@ -1,8 +1,8 @@
 import Link from "next/link";
 import Head from "next/head";
-export const Listbook = (props) => {
+export const Listbook = (props: any) => {
   const books = props.data;
-  const result = books.map((book) => (
+  const result = books.map((book: any) => (
     <Link
       key={book._id}
       href={`/${book.slug}/book/${book._id}`}

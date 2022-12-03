@@ -2,7 +2,7 @@ import AllHadits from "../../components/containers/AllHadits";
 import Layout from "../../components/layouts/Layout";
 import Main from "../../components/layouts/Main";
 
-export default function index() {
+export default function Index() {
   const slug = "bukhari";
   const coll = "Shahih Al-Bukhari";
   return (

@@ -1,10 +1,15 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-export default function useHaditsSearch(search, page, limit, slug) {
+export default function useHaditsSearch(
+  search: any,
+  page: any,
+  limit: any,
+  slug: any
+) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
-  const [hadits, setHadits] = useState([]);
+  const [hadits, setHadits] = useState<any[]>([]);
   const [hasMore, setHasMore] = useState(false);
   const url = process.env.URL;
   useEffect(() => {

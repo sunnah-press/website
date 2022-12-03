@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const Card = ({ id, koleksi, terjemah, arab, slug }) => {
+const Card = ({ id, koleksi, terjemah, arab, slug }: any) => {
   return (
     <div className="card bg-slate-50 dark:bg-slate-800 dark:text-slate-200 w-11/12 md:w-full border dark:border-slate-900 rounded text-sm">
       <div className="card-title border-b dark:border-slate-500 text-center font-semibold py-2 text-base">

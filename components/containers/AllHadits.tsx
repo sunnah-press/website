@@ -7,20 +7,30 @@ import { MyComponent } from "../layouts/Animation";
 import Link from "next/link";
 import Head from "next/head";
 
-export default function AllHadits({ slug, coll }) {
+interface AllHaditsProps {
+  slug: string;
+  coll: string;
+}
+
+export default function AllHadits(props: AllHaditsProps) {
+  const { slug, coll } = props;
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
   const [limit, setLimit] = useState(4);
-
-  const { loading, error, hadits, hasMore } = useHaditsSearch(
+  interface ushProps {
+    loading: boolean;
+    hadits: any;
+    hasMore: boolean;
+  }
+  const { loading, hadits, hasMore }: ushProps = useHaditsSearch(
     search,
     page,
     limit,
     slug
   );
-  const observer = useRef();
+  const observer = useRef<IntersectionObserver | null>(null);
   const lastHaditsElementRef = useCallback(
-    (node) => {
+    (node: any) => {
       if (loading) return;
       if (observer.current) observer.current.disconnect();
       const option = {
@@ -39,7 +49,8 @@ export default function AllHadits({ slug, coll }) {
   );
 
   //
-  const results = hadits.map((dits, index) => {
+  const results = hadits.map((dits: any, index: number) => {
+    console.log(dits);
     if (hadits.length === index + 1) {
       return (
         <div
@@ -82,7 +93,9 @@ export default function AllHadits({ slug, coll }) {
     <div className="flex justify-center">{loading && <MyComponent />}</div>
   );
 
-  const title = `${hadits[0]?.koleksi ? hadits[0].koleksi : ""} | Sunnah.press`;
+  const title: string = `${
+    hadits[0]?.koleksi ? hadits[0].koleksi : ""
+  } | Sunnah.press`;
 
   return (
     <>
@@ -96,7 +109,7 @@ export default function AllHadits({ slug, coll }) {
           <h2 className="text-3xl font-extrabold bg-gradient-to-tr from-blue-700 to-cyan-500 bg-clip-text text-transparent p-3">
             Semua Hadits di {coll}
           </h2>
-          <SearchBar setSearch={setSearch} setPage={setPage} search={search} />
+          <SearchBar setSearch={setSearch} setPage={setPage} />
         </div>
 
         <ListPage>{content}</ListPage>

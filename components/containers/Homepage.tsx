@@ -62,7 +62,7 @@ export default function Homepage() {
           className="flex flex-wrap gap-2 border border-white/25 p-2 justify-center w-full rounded bg-blue-600 text-white shadow shadow-slate-900 hover:bg-blue-900 focus:bg-blue-900 hover:text-white/50 focus:text-white/50 max-w-sm"
         >
           <img src="/assets/book.png" alt="book" width="30" />
-          <div className="text-id font-bold">Jami' At-Tirmidzi</div>
+          <div className="text-id font-bold">Jami&apos; At-Tirmidzi</div>
           <div className="text-arab font-bold">جامع الترمذي </div>
         </Link>
         <Link
@@ -70,7 +70,7 @@ export default function Homepage() {
           className="flex flex-wrap gap-2 border border-white/25 p-2 justify-center w-full rounded bg-blue-600 text-white shadow shadow-slate-900 hover:bg-blue-900 focus:bg-blue-900 hover:text-white/50 focus:text-white/50 max-w-sm"
         >
           <img src="/assets/book.png" alt="book" width="30" />
-          <div className="text-id font-bold">Sunan Nasa'i</div>
+          <div className="text-id font-bold">Sunan Nasa&apos;i</div>
           <div className="text-arab font-bold">سنن النسائي</div>
         </Link>
         <Link
@@ -86,7 +86,7 @@ export default function Homepage() {
           className="flex flex-wrap gap-2 border border-white/25 p-2 justify-center w-full rounded bg-blue-600 text-white shadow shadow-slate-900 hover:bg-blue-900 focus:bg-blue-900 hover:text-white/50 focus:text-white/50 max-w-sm"
         >
           <img src="/assets/book.png" alt="book" width="30" />
-          <div className="text-id font-bold">Muwatha' Malik</div>
+          <div className="text-id font-bold">Muwatha&apos; Malik</div>
           <div className="text-arab font-bold">موطأ مالك</div>
         </Link>
         <Link

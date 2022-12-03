@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-export default function hadits() {
+export default function Hadits() {
   const router = useRouter();
   const [hadits, setHadits] = useState([]);
   const { id } = router.query;

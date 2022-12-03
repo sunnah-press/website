@@ -4,13 +4,12 @@ import Card from "./Card";
 import ListPage from "./ListPage";
 import { Loader } from "./Loader/Loader";
 import Head from "next/head";
+import useBookHadits from "../../hooks/useBookHadits";
 
-export const ListHaditsBook = ({ hadits, setPage, loading, hasMore }) => {
-  if (hadits.length === 0) return <Loader />;
-
-  const observer = useRef();
+export const ListHaditsBook = ({ hadits, setPage, loading, hasMore }: any) => {
+  const observer = useRef<IntersectionObserver | null>();
   const lastHaditsElementRef = useCallback(
-    (node) => {
+    (node: any) => {
       if (loading) return;
       if (observer.current) observer.current.disconnect();
       const option = {
@@ -19,7 +18,7 @@ export const ListHaditsBook = ({ hadits, setPage, loading, hasMore }) => {
       };
       observer.current = new IntersectionObserver((entries) => {
         if (entries[0].isIntersecting && hasMore) {
-          setPage((prevPage) => prevPage + 1);
+          setPage((prevPage: any) => prevPage + 1);
         }
       }, option);
       if (node) observer.current.observe(node);
@@ -27,7 +26,9 @@ export const ListHaditsBook = ({ hadits, setPage, loading, hasMore }) => {
     [loading, hasMore]
   );
 
-  const results = hadits.map((dits, index) => {
+  if (hadits.length === 0) return <Loader />;
+
+  const results = hadits.map((dits: any, index: number) => {
     if (hadits.length === index + 1) {
       return (
         <div

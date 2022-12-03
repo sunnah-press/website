@@ -5,9 +5,10 @@ import { ListHaditsBook } from "../../../components/layouts/ListHaditsBook";
 import Main from "../../../components/layouts/Main";
 import useBookHadits from "../../../hooks/useBookHadits";
 
-export default function book() {
-  const router = useRouter();
-  const { id } = router.query;
+export default function Book() {
+  const { query, isReady } = useRouter();
+  const { id }: any = query;
+
   const [slug, setSlug] = useState("");
   const [page, setPage] = useState(1);
   const [bookid, setBookId] = useState();
@@ -15,6 +16,7 @@ export default function book() {
 
   useEffect(() => {
     setBookId(id);
+
     setSlug("bukhari");
   }, [id]);
 

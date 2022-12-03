@@ -4,7 +4,7 @@ import { Pagination } from "../layouts/pagination/Pagination";
 import { Table } from "../layouts/Table";
 import Head from "next/head";
 
-export const OneHadits = (props) => {
+export const OneHadits = (props: any) => {
   if (props.hadits.current_page === "undefined") return <Loader />;
   const hadits = props.hadits.data;
   // console.log(hadits);

@@ -1,5 +1,5 @@
 const { collectionSyafii } = require("../config/database");
-
+export {};
 // Query for a All Book
 const getAllBook = () => {
   return collectionSyafii
@@ -24,7 +24,7 @@ const getAllBook = () => {
 };
 
 // Query for a One book
-const getOneBook = (id, page) => {
+const getOneBook = (id: Number, page: any) => {
   const query = { kitab_id: id };
   const option = { skip: (page - 1) * 4, limit: 4 };
   return collectionSyafii.find(query, option).sort({ id: 1 }).toArray();

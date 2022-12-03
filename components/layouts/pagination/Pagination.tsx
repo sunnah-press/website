@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export const Pagination = ({ numHadits, slug, totalHadits }) => {
+export const Pagination = ({ numHadits, slug, totalHadits }: any) => {
   return (
     <div className="pagination w-11/12 md:max-w-4xl flex justify-center mx-auto mt-10">
       <div className="flex items-center justify-between border-t border-gray-200 bg-white dark:bg-slate-800 dark:border-slate-800 rounded px-4 py-3 sm:px-6">
