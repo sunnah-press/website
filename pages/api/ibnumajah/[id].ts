@@ -1,4 +1,4 @@
-const { collectionAbudawud } = require("../../../config/database");
+const { collectionIbnumajah } = require("../../../config/database");
 
 export default async function handler(req, res) {
   const { id } = req.query;
@@ -6,11 +6,11 @@ export default async function handler(req, res) {
   const haditsPerPage = parseInt(req.query.limit) || 1;
 
   let totalItems;
-  return collectionAbudawud
+  return collectionIbnumajah
     .countDocuments()
     .then((count) => {
       totalItems = count;
-      return collectionAbudawud
+      return collectionIbnumajah
         .find()
         .sort({ id: 1 })
         .skip((id - 1) * haditsPerPage)

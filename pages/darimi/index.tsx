@@ -3,8 +3,8 @@ import Layout from "../../components/layouts/Layout";
 import Main from "../../components/layouts/Main";
 
 export default function index() {
-  const slug = "muslim";
-  const coll = "Shahih Muslim";
+  const slug = "darimi";
+  const coll = "Sunan Darimi";
   return (
     <Layout>
       <Main container={<AllHadits slug={slug} coll={coll} />} margin="mb-10" />

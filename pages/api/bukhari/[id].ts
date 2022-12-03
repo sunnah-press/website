@@ -19,7 +19,7 @@ export default async function handler(req, res) {
     })
     .then((result) => {
       res.json({
-        message: "Get All Hadits Bukhari Success!",
+        message: "Get All Hadits Success!",
         totalData: totalItems,
         current_page: id,
         per_page: haditsPerPage,

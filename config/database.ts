@@ -14,14 +14,30 @@ const client = new MongoClient(uri, {
 const database = client.db("hadits");
 const collectionBukhari = database.collection("bukhari");
 const collectionAbudawud = database.collection("abudawud");
+const collectionAhmad = database.collection("ahmad");
 const collectionAllBook = database.collection("allbook");
+const collectionDarimi = database.collection("darimi");
+const collectionIbnumajah = database.collection("ibnumajah");
+const collectionMalik = database.collection("malik");
+const collectionMuslim = database.collection("muslim");
+const collectionNasai = database.collection("nasai");
+const collectionRiyadhus = database.collection("riyadhus");
+const collectionSyafii = database.collection("syafii");
+const collectionTirmidzi = database.collection("tirmidzi");
 
-// const find = (query, option) => collectionBukhari.find(query, option);
-// const aggregate = (agg) => collectionBukhari.aggregate(agg);
 module.exports = {
   collectionBukhari,
   client,
   collectionAllBook,
   collectionAbudawud,
+  collectionAhmad,
+  collectionDarimi,
+  collectionIbnumajah,
+  collectionMalik,
+  collectionMuslim,
+  collectionNasai,
+  collectionRiyadhus,
+  collectionSyafii,
+  collectionTirmidzi,
   database,
 };
