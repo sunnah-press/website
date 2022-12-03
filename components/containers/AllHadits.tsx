@@ -5,6 +5,7 @@ import useHaditsSearch from "../../hooks/useHaditsSearch";
 import Card from "../layouts/Card";
 import { MyComponent } from "../layouts/Animation";
 import Link from "next/link";
+import Head from "next/head";
 
 export default function AllHadits({ slug, coll }) {
   const [search, setSearch] = useState("");
@@ -81,16 +82,25 @@ export default function AllHadits({ slug, coll }) {
     <div className="flex justify-center">{loading && <MyComponent />}</div>
   );
 
-  return (
-    <div className="container mx-auto">
-      <div className="hero text-center mt-32 mb-10 w-4/5 mx-auto">
-        <h2 className="text-3xl font-extrabold bg-gradient-to-tr from-blue-700 to-cyan-500 bg-clip-text text-transparent p-3">
-          Semua Hadits di {coll}
-        </h2>
-        <SearchBar setSearch={setSearch} setPage={setPage} search={search} />
-      </div>
+  const title = `${hadits[0]?.koleksi ? hadits[0].koleksi : ""} | Sunnah.press`;
 
-      <ListPage>{content}</ListPage>
-    </div>
+  return (
+    <>
+      <Head>
+        <title>{title}</title>
+        <link rel="icon" href="/assets/sunnah-brand/favicon.ico" />
+      </Head>
+
+      <div className="container mx-auto">
+        <div className="hero text-center mt-32 mb-10 w-4/5 mx-auto">
+          <h2 className="text-3xl font-extrabold bg-gradient-to-tr from-blue-700 to-cyan-500 bg-clip-text text-transparent p-3">
+            Semua Hadits di {coll}
+          </h2>
+          <SearchBar setSearch={setSearch} setPage={setPage} search={search} />
+        </div>
+
+        <ListPage>{content}</ListPage>
+      </div>
+    </>
   );
 }

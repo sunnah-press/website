@@ -1,5 +1,5 @@
 import Link from "next/link";
-
+import Head from "next/head";
 export const Listbook = (props) => {
   const books = props.data;
   const result = books.map((book) => (
@@ -13,9 +13,14 @@ export const Listbook = (props) => {
   ));
 
   const content = result?.length ? result : <article>Tidak ada</article>;
-
+  // console.log(books);
+  const title = `${books[0]?.koleksi ? books[0].koleksi : ""} | Sunnah.press`;
   return (
     <>
+      <Head>
+        <title>{title}</title>
+        <link rel="icon" href="/assets/sunnah-brand/favicon.ico" />
+      </Head>
       <div className="container mt-32 md:max-w-3xl w-11/12 flex mx-auto self-center justify-center">
         <div className="breadcrumbs p-4 rounded flex flex-wrap items-center gap-2 md:text-sm text-xs justify-center bg-slate-100 text-slate-900 border dark:text-slate-400 dark:bg-slate-800 dark:border-slate-800">
           <Link href="/" className="group">

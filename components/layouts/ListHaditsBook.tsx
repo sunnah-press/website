@@ -3,6 +3,7 @@ import { useCallback, useRef } from "react";
 import Card from "./Card";
 import ListPage from "./ListPage";
 import { Loader } from "./Loader/Loader";
+import Head from "next/head";
 
 export const ListHaditsBook = ({ hadits, setPage, loading, hasMore }) => {
   if (hadits.length === 0) return <Loader />;
@@ -41,7 +42,7 @@ export const ListHaditsBook = ({ hadits, setPage, loading, hasMore }) => {
             <p className="arabic1 text-xl">{dits.arab}</p>
             <p className="artinya">{dits.terjemah}</p>
             <Link
-              href={`/bukhari/${dits.id}`}
+              href={`/${dits.slug}/${dits.id}`}
               className="p-2 bg-blue-500 rounded hover:ring hover:text-white focus:ring text-center text-white font-semibold"
             >
               Lihat
@@ -57,6 +58,7 @@ export const ListHaditsBook = ({ hadits, setPage, loading, hasMore }) => {
           terjemah={dits.terjemah}
           arab={dits.arab}
           koleksi={dits.koleksi}
+          slug={dits.slug}
         />
       );
     }
@@ -69,8 +71,16 @@ export const ListHaditsBook = ({ hadits, setPage, loading, hasMore }) => {
       <p>Tidak ada</p>
     </article>
   );
+  const title = `${hadits[0]?.kitab_nama ? hadits[0].kitab_nama : ""} - ${
+    hadits[0]?.koleksi ? hadits[0].koleksi : ""
+  } | Sunnah.press`;
+  // console.log(content);
   return (
     <>
+      <Head>
+        <title>{title}</title>
+        <link rel="icon" href="/assets/sunnah-brand/favicon.ico" />
+      </Head>
       <div className="container mt-32 mb-10 md:max-w-3xl w-11/12 flex mx-auto self-center justify-center">
         <div className="breadcrumbs p-4 rounded flex flex-wrap items-center gap-2 md:text-sm text-xs justify-center bg-slate-100 text-slate-900 border dark:text-slate-400 dark:bg-slate-800 dark:border-slate-800">
           <Link href="/" className="group">
