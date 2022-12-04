@@ -9,7 +9,7 @@ interface LayoutsProps {
 export default function Layout(props: LayoutsProps) {
   const { children } = props;
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex flex-col h-full min-h-screen">
       <Header />
 
       {children}
