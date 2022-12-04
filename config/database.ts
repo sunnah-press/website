@@ -23,7 +23,6 @@ const collectionIbnumajah = database.collection("ibnumajah");
 const collectionMalik = database.collection("malik");
 const collectionMuslim = database.collection("muslim");
 const collectionNasai = database.collection("nasai");
-const collectionRiyadhus = database.collection("riyadhus");
 const collectionSyafii = database.collection("syafii");
 const collectionTirmidzi = database.collection("tirmidzi");
 
@@ -38,7 +37,6 @@ module.exports = {
   collectionMalik,
   collectionMuslim,
   collectionNasai,
-  collectionRiyadhus,
   collectionSyafii,
   collectionTirmidzi,
   database,

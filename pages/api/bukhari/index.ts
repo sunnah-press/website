@@ -6,12 +6,12 @@ export default async function getAll(req: any, res: any) {
   }
 
   try {
-    await collectionBukhari.createIndex({
-      terjemah: "text",
-      kitab_nama: "text",
-      arab: "text",
-      koleksi: "text",
-    });
+    // await collectionBukhari.createIndex({
+    //   terjemah: "text",
+    //   kitab_nama: "text",
+    //   arab: "text",
+    //   koleksi: "text",
+    // });
 
     const sc = req.query.search;
     const page = parseInt(req.query.page) || 1;
