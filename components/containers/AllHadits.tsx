@@ -50,7 +50,7 @@ export default function AllHadits(props: AllHaditsProps) {
 
   //
   const results = hadits.map((dits: any, index: number) => {
-    console.log(dits);
+    // console.log(dits);
     if (hadits.length === index + 1) {
       return (
         <div
